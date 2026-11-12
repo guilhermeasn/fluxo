@@ -69,14 +69,14 @@ function App() {
 
   return (
     <main className="shell">
-      <header className="topbar">
-        <a className="brand" href="/">fluxo<span>.</span></a>
+      {/* <header className="topbar">
+        <a className="brand" href="/">fluxo</a>
         <div className="streak">🔥 3 dias de ritmo</div>
-      </header>
+      </header> */}
 
       <section className="hero">
+        <h1>fluxo</h1>
         <p className="eyebrow">NÍVEL {String(levelIndex + 1).padStart(2, '0')} · {level.name.toUpperCase()}</p>
-        <h1>Encontre o seu ritmo.</h1>
         <p className="subtitle">{level.description}</p>
       </section>
 

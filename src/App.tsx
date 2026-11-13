@@ -77,18 +77,9 @@ function App() {
       <section className="hero">
         <h1>fluxo</h1>
         <p className="eyebrow">NÍVEL {String(levelIndex + 1).padStart(2, '0')} · {level.name.toUpperCase()}</p>
-        <p className="subtitle">{level.description}</p>
       </section>
 
       <section className="practice-card" aria-label="Exercício de digitação">
-        <div className="level-progress" aria-label={`Fase ${phaseIndex + 1} de ${level.items.length}`}>
-          <div>
-            <span>FASE {String(phaseIndex + 1).padStart(2, '0')}</span>
-            <b>{level.itemLabel}: {item}</b>
-          </div>
-          <span>{phaseIndex + 1}/{level.items.length}</span>
-        </div>
-        <div className="progress-track" aria-hidden="true"><i style={{ width: `${((phaseIndex + 1) / level.items.length) * 100}%` }} /></div>
         <div className="lesson-navigation">
           <label>
             nível
@@ -103,6 +94,14 @@ function App() {
             </select>
           </label>
         </div>
+        <div className="level-progress" aria-label={`Fase ${phaseIndex + 1} de ${level.items.length}`}>
+          <div>
+            <span>NÍVEL {String(levelIndex + 1).padStart(2, '0')} · FASE {String(phaseIndex + 1).padStart(2, '0')}</span>
+            <p className="subtitle">{level.description}</p>
+          </div>
+          <span>{phaseIndex + 1}/{level.items.length}</span>
+        </div>
+        <div className="progress-track" aria-hidden="true"><i style={{ width: `${((phaseIndex + 1) / level.items.length) * 100}%` }} /></div>
         <div className="metrics">
           <div><span>VELOCIDADE</span><strong>{stats.wpm}<small> ppm</small></strong></div>
           <div><span>PRECISÃO</span><strong>{stats.accuracy}<small>%</small></strong></div>
